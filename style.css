@@ -303,3 +303,8 @@ input {
     background: transparent;
     font-size: 14px;
 }
+
+#totalProfit {
+    color: green;
+    font-weight: bold;
+}
