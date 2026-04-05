@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: green;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        border: 2px solid red;
+    }
+}
+
+h1,
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: darkgreen;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: green;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.contact-box {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.contact-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.section {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image img {
+        width: 100%;
+    }
+}
+
+.text {
+    flex: 1;
+}
+
+.image img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.section {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: flex-start;
+    }
+
+    .image img {
+        width: 100%;
+    }
+}
+
+.image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.text h2 {
+    margin-bottom: 10px;
+}
+
+.text p {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+.my-contact {
+    background: #f1f8f4;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.contact-container {
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #fff;
+}
+
+.contact-container {
+    border: 2px solid #ff4d4d;
+}
+
+@media (max-width: 768px) {
+    nav {
+        text-align: flex-start;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+nav {
+    border: 3px solid red;
+}
+
+nav a.active {
+    border-bottom: 2px solid white;
+}
+
+nav {
+    padding: 15px 25px;
+}
+
+nav {
+    justify-content: flex-start;
+}
+
+.hero {
+    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 15px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+}
+
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.crop-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.crop-table th {
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.crop-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.crop-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+td[contenteditable="true"] {
+    direction: ltr;
+    text-align: left;
+}
+
+td[contenteditable="true"] {
+    unicode-bidi: plaintext;
+}
+
+input {
+    width: 80px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}

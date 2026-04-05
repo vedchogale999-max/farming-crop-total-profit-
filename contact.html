@@ -1,0 +1,69 @@
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html" class="active">About </a>
+</nav>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Fill Contact Info</h2>
+        <h2>
+            <form onsubmit="return validateForm()">
+                <input type="text" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Your Email" required><br><br>
+                <textarea placeholder="Your Message" rows="5" required></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+        </h2>
+        <div id="output"></div>
+        <br>
+        <div class="my-contact">
+            <h2>My Contact Details</h2>
+            <p><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></p>
+            <p><strong>Phone:</strong> 1234567890</p>
+        </div>
+    </div>
+
+    <br>
+
+    </div>
+    <script>
+        function validateForm() {
+            let name = document.querySelector("input[type='text']").value;
+            let email = document.querySelector("input[type='email']").value;
+            let message = document.querySelector("textarea").value;
+            document.querySelector("form").reset();
+            document.getElementById("output").innerHTML =
+                "<h3>Thank you! Your message has been received.</h3>";
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill all fields");
+                return false;
+            }
+
+            document.getElementById("output").innerHTML =
+                "<h3>Submitted Details:</h3>" +
+                "<p><b>Name:</b> " + name + "</p>" +
+                "<p><b>Email:</b> " + email + "</p>" +
+                "<p><b>Message:</b> " + message + "</p>";
+
+            return false; // stop page reload
+        }
+    </script>
+</body>
+
+<script>
+    setInterval(() => {
+        document.getElementById("time").innerText =
+            "Current Time: " + new Date().toLocaleTimeString();
+    }, 1000);
+</script>
+
+<footer>
+    <p>© 2026 My Village Project | Built by Ved Vijay Chogale</p>
+</footer>

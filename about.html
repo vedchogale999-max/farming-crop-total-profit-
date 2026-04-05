@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="contact.html" class="active">Contact</a>
+</nav>
+
+<head>
+    <title>My Village Project</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="card">
+            <h1>About My Village</h1>
+            <p>
+            <h3>My village mainly depends on agriculture. Most farmers grow seasonal crops
+                using traditional methods.</h3><br>
+            <h3> My goal is to improve farming using modern
+                technology and increase overall productivity and profit.</h3>
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Crop Details</h2>
+
+            <table class="crop-table" id="cropTable">
+                <tr>
+                    <th>Crop Name</th>
+                    <th>Area (Acres)</th>
+                    <th>Production (kg)</th>
+                    <th>Market Price (₹/kg)</th>
+                    <th>Profit (₹)</th>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name">Rice</td>
+                    <td><input type="number" class="area" value="5"></td>
+                    <td><input type="number" class="production" value="8000"></td>
+                    <td><input type="number" class="price" value="25"></td>
+                    <td class="profit"></td>
+                </tr>
+
+
+                <tr>
+                    <td contenteditable="true" class="crop-name">Wheat</td>
+                    <td><input type="number" class="area" value="3.5"></td>
+                    <td><input type="number" class="production" value="5000"></td>
+                    <td><input type="number" class="price" value="22"></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name">Vegetables</td>
+                    <td><input type="number" class="area" value="2"></td>
+                    <td><input type="number" class="production" value="2750"></td>
+                    <td><input type="number" class="price" value="30"></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name">fruit</td>
+                    <td><input type="number" class="area" value="3"></td>
+                    <td><input type="number" class="production" value="5000"></td>
+                    <td><input type="number" class="price" value="50"></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+                    <td contenteditable="true" class="crop-name"></td>
+                    <td><input type="number" class="area" value=""></td>
+                    <td><input type="number" class="production" value=""></td>
+                    <td><input type="number" class="price" value=""></td>
+                    <td class="profit"></td>
+                </tr>
+
+                <tr>
+  <td colspan="5"><strong>Total Profit: ₹ <span id="totalProfit">0</span></strong></td>
+</tr>
+
+            </table>
+
+            
+        </div>
+
+    </div>
+
+    <script>
+function calculateProfit() {
+  let rows = document.querySelectorAll("#cropTable tr");
+  let total = 0;
+
+  rows.forEach((row, index) => {
+    if (index === 0) return;
+
+    let areaInput = row.querySelector(".area");
+    let productionInput = row.querySelector(".production");
+    let priceInput = row.querySelector(".price");
+    let profitCell = row.querySelector(".profit");
+
+    if (!areaInput || !productionInput || !priceInput || !profitCell) return;
+
+    let production = parseFloat(productionInput.value);
+    let price = parseFloat(priceInput.value);
+
+    if (isNaN(production) || isNaN(price)) {
+      profitCell.innerText = "Invalid";
+      profitCell.style.color = "red";
+    } else {
+      let profit = production * price;
+      profitCell.innerText = profit;
+      profitCell.style.color = "black";
+      total += profit; // ADD to total
+    }
+  });
+
+  // Update total profit
+  document.getElementById("totalProfit").innerText = total;
+}
+
+calculateProfit();
+
+document.querySelectorAll(".area, .production, .price").forEach(input => {
+  input.addEventListener("input", calculateProfit);
+});
+</script>
+
+</body>
+
+<script>
+    setInterval(() => {
+        document.getElementById("time").innerText =
+            "Current Time: " + new Date().toLocaleTimeString();
+    }, 1000);
+</script>
+
+<footer>
+    <p>© 2026 My Village Project | Built by Ved Vijay Chogale</p>
+</footer>
+
+
+</html>

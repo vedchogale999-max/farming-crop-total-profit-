@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Village Project</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<nav>
+    <a href="contact.html" class="active">Contact</a>
+</nav>
+
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to My Village</h1>
+            <p>Building a smarter future with farming and technology</p>
+            <a href="about.html" class="btn">Explore More</a>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+<p id="time"></p>
+
+<script>
+    setInterval(() => {
+        document.getElementById("time").innerText =
+            "Current Time: " + new Date().toLocaleTimeString();
+    }, 1000);
+</script>
+
+<footer>
+    <p>© 2026 My Village Project | Built by Ved Vijay Chogale</p>
+</footer>
+
+</html>
